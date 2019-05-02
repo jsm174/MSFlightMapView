@@ -9,13 +9,13 @@
 import UIKit
 import CoreLocation
 
-struct MSFlight {
+public struct MSFlight {
     var firstLocation: CLLocationCoordinate2D
     var secondLocation: CLLocationCoordinate2D
-    var iconImage: UIImage?
-    var iconColor: UIColor?
-    var pathColor: UIColor?
-    var markerColor: UIColor?
+    public var iconImage: UIImage?
+    public var iconColor: UIColor?
+    public var pathColor: UIColor?
+    public var markerColor: UIColor?
         
     init(withFirstLocation firstLocation: CLLocationCoordinate2D, withSecondLocation secondLocation: CLLocationCoordinate2D, andIconImage iconImage: UIImage? = nil, andIconColor iconColor: UIColor? = nil, andPathColor pathColor: UIColor? = nil, andMarkerColor markerColor: UIColor? = nil) {
         self.firstLocation = firstLocation
@@ -45,10 +45,10 @@ extension Array where Element == MSFlight {
     }
 }
 
-struct MSMultiLegFlight {
-    var flights: [MSFlight]
+public struct MSMultiLegFlight {
+    public var flights: [MSFlight]
     
-    init(withLocations locations: [CLLocationCoordinate2D]) {
+    public init(withLocations locations: [CLLocationCoordinate2D]) {
         flights = []
         if locations.count >= 2 {
             for index in 0..<locations.count-1 {

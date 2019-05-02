@@ -29,7 +29,7 @@ public class MSFlightMapView: GMSMapView {
         }
     }
 
-    var flights: [MSFlight] = [] {
+    public var flights: [MSFlight] = [] {
         didSet {
             redraw()
         }
