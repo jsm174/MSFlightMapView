@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 
-class MSFlightMapView: GMSMapView {
+public class MSFlightMapView: GMSMapView {
     
     var pathColor: UIColor = MSConstants.secondaryColor {
         didSet {

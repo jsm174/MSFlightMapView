@@ -2,6 +2,8 @@ Pod::Spec.new do |s|
 s.name             = 'MSFlightMapView'
 s.version          = '0.2.1'
 s.summary          = 'Flight animation on Google Maps'
+s.swift_version    = '4.0'
+
 
 s.description      = <<-DESC
 MSFlightMapView helps you add flight animation on top of Google Maps
