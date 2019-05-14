@@ -17,7 +17,13 @@ public class MSFlightMapView: GMSMapView {
         }
     }
     
-    var markerColor: UIColor = MSConstants.primaryColor {
+    var firstMarkerColor: UIColor = MSConstants.primaryColor {
+        didSet {
+            redraw()
+        }
+    }
+    
+    var secondMarkerColor: UIColor = MSConstants.primaryColor {
         didSet {
             redraw()
         }
@@ -48,8 +54,8 @@ public class MSFlightMapView: GMSMapView {
         
         for flight in flights {
             let path = GeodesicPathBuilder.buildGeodesicPathBetween(flight.firstLocation, flight.secondLocation)
-            let departureMarker = markerBuilder.buildMarkerView(withPosition: flight.firstLocation, withColor: flight.markerColor ?? markerColor)
-            let arrivalMarker = markerBuilder.buildMarkerView(withPosition: flight.secondLocation, withColor: flight.markerColor ?? markerColor)
+            let departureMarker = markerBuilder.buildMarkerView(withPosition: flight.firstLocation, withColor: flight.firstMarkerColor ?? firstMarkerColor)
+            let arrivalMarker = markerBuilder.buildMarkerView(withPosition: flight.secondLocation, withColor: flight.secondMarkerColor ?? secondMarkerColor)
             let airplaneMarker = markerBuilder.buildAirplaneMarker(withFlight: flight, andPath: path, andColor: flight.iconColor ?? iconColor)
             let polyline = MSPathBuilder().buildGeodesicPolyline(path, andColor: flight.pathColor ?? pathColor)
 
